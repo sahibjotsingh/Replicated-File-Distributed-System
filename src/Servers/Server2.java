@@ -1,5 +1,8 @@
 
-package Client;
+package Servers;
+
+import RMIInterface.RMIInterface;
+import Servers.Server1;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
@@ -17,15 +20,15 @@ import java.rmi.server.UnicastRemoteObject;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class Server1 extends UnicastRemoteObject implements RMIInterface
-{ 
+public class Server2 extends UnicastRemoteObject implements RMIInterface
+{
     public boolean readAllowed=true;
     public boolean writeAllowed=true;
-    String portNumber[]={"5002", "5003", "5004", "5005"};
+    String portNumber[]={"5001", "5003", "5004", "5005"};
     String IPaddress[]={"localhost", "localhost", "localhost", "localhost"};
-    String serverName[]={"server2", "server3", "server4", "server5"};
-    String filePath = "D:\\Server files\\Server1\\textfile.txt";
-    protected Server1() throws RemoteException, NotBoundException, MalformedURLException 
+    String serverName[]={"server1", "server3", "server4", "server5"};
+    String filePath = "D:\\Server files\\Server2\\textfile.txt";
+    protected Server2() throws RemoteException, NotBoundException, MalformedURLException 
     {
         super();
     }
@@ -121,7 +124,6 @@ public class Server1 extends UnicastRemoteObject implements RMIInterface
                 catch(Exception e){
                     System.out.println("Oh no!!!");
                 }
-                    
                     readAllowed=true;
                     writeAllowed=true;
                     UpdateAll(readAllowed, writeAllowed);
@@ -185,8 +187,8 @@ public class Server1 extends UnicastRemoteObject implements RMIInterface
     {
         try 
         {
-            Registry registry=LocateRegistry.createRegistry(5001);
-            registry.rebind("server1", new Server1());
+            Registry registry=LocateRegistry.createRegistry(5002);
+            registry.rebind("server2", new Server2());
             System.err.println("Server ready");
         } catch (Exception e) {
 

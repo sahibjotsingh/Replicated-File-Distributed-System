@@ -1,6 +1,9 @@
 
-package Client;
+package Servers;
 
+import RMIInterface.RMIInterface;
+import Servers.Server2;
+import Servers.Server1;
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
 import java.io.File;
