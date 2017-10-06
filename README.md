@@ -5,7 +5,7 @@ This is a demo application which creates 5 fileservers and client(s) that are lo
 * Each Server updates the file read and write permissions across all servers
 
 ## Prerequisites
-Make a textfile.txt file at each of the following locations:
+Add a textfile.txt file at each of the following folders:
    * D:\Server files\Server1
    * D:\Server files\Server2
    * D:\Server files\Server3
