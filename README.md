@@ -1,5 +1,5 @@
 # Replicated-File-Distributed-System
-This is a demo application which creates 5 fileservers and client(s) that are localhost only.
+This is a demo application which creates 5 servers and client(s) that are localhost only. Each server provides access to one copy of a text file. A client can interact with any one of the server modules to perform an operation according to Readers-Writers Problem. 
 
 ## Features
 * Each Server updates the file read and write permissions across all servers
